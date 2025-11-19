@@ -174,7 +174,7 @@
 
 <p>Proceda da seguinte forma (com <strong>sudo</strong> ou como root):</p> 
 <ul> 
-    <li>Identifique o processo: <code>ps -f -p 18751</code> ou liste todos os processos do usuário: <code>ps -u teste</code> / <code>pgrep -u teste -l</code>.
+    <li>Identifique o processo: <code>ps -fp 18751</code> ou liste todos os processos do usuário: <code>ps -u teste</code> / <code>pgrep -u teste -l</code>.
 </li> 
     <li>Tente encerrar a sessão de forma ordenada (se o sistema usar systemd): <code>sudo loginctl terminate-user teste</code>.
 </li> 
