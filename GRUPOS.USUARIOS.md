@@ -89,7 +89,7 @@
 <table>
     <tr>
         <td><code><strong>adduser name</strong></code></td>
-        <td>Ferramenta amigável e interativa para criar novos usuário ao sistema. Ele apresenta uma série de pergntas durante o processo de criação, como o nome completo do usuário, senha, grupos adicionais , tornando a tarefa mais simples para iniciantes.<br> O adduser também cuida automaticamente de várias configurações padrão, como a criação de uma pasta inicial para o usuário em /home e a atribuição de um shell padrão.
+        <td>Ferramenta amigável e interativa para criar novos usuário ao sistema. Ele apresenta uma série de perguntas durante o processo de criação, como o nome completo do usuário, senha, grupos adicionais , tornando a tarefa mais simples para iniciantes.<br> O adduser também cuida automaticamente de várias configurações padrão, como a criação de uma pasta inicial para o usuário em /home e a atribuição de um shell padrão.
         </td>
     </tr>
 </table>
