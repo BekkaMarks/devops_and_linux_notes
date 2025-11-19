@@ -1,4 +1,4 @@
-<h1>Gerenciamento de Usuários e Grupos no Linux</h1>
+<h1>📁👤Gerenciamento de Usuários e Grupos no Linux</h1>
 
 <p>No Linux, um usuário (user) é uma conta que representa uma pessoa, serviço ou processo dentro do sistema. Cada usuário possui um identificador numérico único (UID), um diretório pessoal, um shell padrão e um conjunto específico de permissões. Essa estrutura organiza e separa as atividades de cada conta, tornando o sistema mais seguro e fácil de administrar, pois limita o acesso apenas ao que foi permitido.</p>
 
