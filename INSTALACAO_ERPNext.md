@@ -28,8 +28,8 @@ sudo apt update && sudo apt upgrade
 ## Passo 3 — Criar usuário do sistema
 Crie um usuário dedicado para a instalação:
 ```bash
-sudo useradd -m -d /opt/erpnext -U -r -s /bin/bash erpnext
-sudo usermod -aG sudo erpnext
+sudo useradd -m -d /opt/frappe -U -r -s /bin/bash frappe
+sudo usermod -aG sudo frappe
 ```
 
 ---
@@ -86,7 +86,7 @@ Responda a todas as perguntas com "SIM" (S) e guarde a senha root do MySQL.
 ## Passo 7 — Instalar Bench e ERPNext
 Troque para o usuário criado:
 ```bash
-sudo su - erpnext
+sudo su - frappe
 ```
 
 Em seguida, edite o arquivo .bashrc:
@@ -107,12 +107,12 @@ Crie o diretório do bench e ajuste permissões:
 ```bash
 # como root (ou usando sudo antes)
 sudo mkdir -p /opt/bench
-sudo chown -R erpnext:erpnext /opt/bench
+sudo chown -R frappe:frappe /opt/bench
 
 cd /opt/bench
 ```
 
-Clone e instale o bench (execução como `erpnext`):
+Clone e instale o bench (execução como `frappe`):
 ```bash
 git clone https://github.com/frappe/bench bench-repo
 pip3 install --user -e bench-repo
@@ -120,13 +120,13 @@ pip3 install --user -e bench-repo
 
 Inicialize o bench:
 ```bash
-bench init erpnext
+bench init frappe
 ```
 
 Crie um novo site (substitua pelo seu domínio):
 ```bash
-cd /opt/bench/erpnext
-bench new-site erpnext.seudominio.com
+cd /opt/bench/frappe
+bench new-site frappe.seudominio.com
 ```
 O comando pedirá a senha do banco, administração e outras configurações. Forneça conforme sua política de segurança.
 
@@ -143,10 +143,10 @@ vamos instalar o frappe-bench e executar o comando abaixo.
 $ sudo pip3 instalar frappe-bench
 ```
 
-Em seguida, navegue até /opt/bench/erpnext e configure o ambiente de produção:
+Em seguida, navegue até /opt/bench/frappe e configure o ambiente de produção:
 ```bash
-$ cd /opt/bench/erpnext 
-$ sudo /opt/erpnext/.local/bin/bench setup production erpnext
+$ cd /opt/bench/frappe 
+$ sudo /opt/frappe/.local/bin/bench setup production frappe
 ```
 
 ---
