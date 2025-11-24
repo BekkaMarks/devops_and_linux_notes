@@ -18,6 +18,9 @@ lsb_release -a
 ---
 
 ## Passo 2 — Atualizar o sistema
+```bash
+sudo su -
+```
 Atualize pacotes:
 ```bash
 apt update && sudo apt upgrade
@@ -65,42 +68,151 @@ npm install -g yarn
 ---
 
 ## Passo 6 — Instalar e configurar MariaDB
+
+```bash
+mkdir /etc/mysql/
+mkdir /etc/mysql/mariadb.conf.d
+nano my-cnf.conf
+
+```
+
+Cole esse arquivo dentro do terminal e depois crtl s + crtl x
+```bash
+#
+# These groups are read by MariaDB server.
+# Use it for options that only the server (but not clients) should see
+
+# this is read by the standalone daemon and embedded servers
+[server]
+
+# this is only for the mysqld standalone daemon
+[mysqld]
+innodb_page_size=64K
+innodb_default_row_format = dynamic
+innodb_strict_mode = 0
+innodb-file-format=barracuda
+innodb-file-per-table=1
+innodb-large-prefix=1
+#
+# * Basic Settings
+#
+
+#user                    = mysql
+pid-file                 = /run/mysqld/mysqld.pid
+basedir                  = /usr
+#datadir                 = /var/lib/mysql
+#tmpdir                  = /tmp
+
+# Broken reverse DNS slows down connections considerably and name resolve is
+# safe to skip if there are no "host by domain name" access grants
+#skip-name-resolve
+
+# Instead of skip-networking the default is now to listen only on
+# localhost which is more compatible and is not less secure.
+bind-address            = 0.0.0.0
+
+#
+# * Fine Tuning
+#
+
+#key_buffer_size        = 128M
+#max_allowed_packet     = 1G
+#thread_stack           = 192K
+#thread_cache_size      = 8
+# This replaces the startup script and checks MyISAM tables if needed
+# the first time they are touched
+#myisam_recover_options = BACKUP
+max_connections         = 10000
+#table_cache            = 64
+
+#
+# * Logging and Replication
+#
+
+# Both location gets rotated by the cronjob.
+# Be aware that this log type is a performance killer.
+# Recommend only changing this at runtime for short testing periods if needed!
+#general_log_file       = /var/log/mysql/mysql.log
+#general_log            = 1
+
+# When running under systemd, error logging goes via stdout/stderr to journald
+# and when running legacy init error logging goes to syslog due to
+# /etc/mysql/conf.d/mariadb.conf.d/50-mysqld_safe.cnf
+# Enable this if you want to have error logging into a separate file
+#log_error = /var/log/mysql/error.log
+# Enable the slow query log to see queries with especially long duration
+#slow_query_log_file    = /var/log/mysql/mariadb-slow.log
+#long_query_time        = 10
+#log_slow_verbosity     = query_plan,explain
+#log-queries-not-using-indexes
+#min_examined_row_limit = 1000
+
+# The following can be used as easy to replay backup logs or for replication.
+# note: if you are setting up a replication slave, see README.Debian about
+#       other settings you may need to change.
+#server-id              = 1
+#log_bin                = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 10
+#max_binlog_size        = 100M
+
+#
+# * SSL/TLS
+#
+
+# For documentation, please read
+# https://mariadb.com/kb/en/securing-connections-for-client-and-server/
+#ssl-ca = /etc/mysql/cacert.pem
+#ssl-cert = /etc/mysql/server-cert.pem
+#ssl-key = /etc/mysql/server-key.pem
+#require-secure-transport = on
+
+#
+# * Character sets
+#
+
+# MySQL/MariaDB default is Latin1, but in Debian we rather default to the full
+# utf8 4-byte character set. See also client.cnf
+character-set-server  = utf8mb4
+collation-server = utf8mb4_unicode_ci
+#
+# * InnoDB
+#
+
+# InnoDB is enabled by default with a 10MB datafile in /var/lib/mysql/.
+# Read the manual for more InnoDB related options. There are many!
+# Most important is to give InnoDB 80 % of the system RAM for buffer use:
+# https://mariadb.com/kb/en/innodb-system-variables/#innodb_buffer_pool_size
+innodb_buffer_pool_size = 22G
+
+# this is only for embedded server
+[embedded]
+
+# This group is only read by MariaDB servers, not by MySQL.
+# If you use the same .cnf file for MySQL and MariaDB,
+# you can put MariaDB-only options here
+[mariadb]
+
+# This group is only read by MariaDB-11.2 servers.
+# If you use the same .cnf file for MariaDB of different versions,
+# use this group for options that older servers don't understand
+[mariadb-11.2]
+```
+```bash
+cp my-cnf.conf /etc/mysql/mariadb.conf.d/50-server.cnf
+```
+
 Instale o MariaDB:
 ```bash
 apt install mariadb-server mariadb-client
 
 ```
 
-criar o diretório (se necessário) e copiar o arquivo de configuração
-```bash
-mkdir -p /etc/mysql/mariadb.conf.d
-cp /home/grv/my-cnf.conf /etc/mysql/mariadb.conf.d/50-server.cnf
-```
-Ou edite/crie o arquivo diretamente:
-```bash
-nano /etc/mysql/mariadb.conf.d/50-server.cnf
-```
-
-Dentro do bloco `[mysqld]`, ajuste/adicione:
-```ini
-collation-server = utf8mb4_unicode_ci
-
-innodb-file-format = barracuda
-innodb-file-per-table = 1
-innodb-large-prefix = 1
-```
-
 Reinicie e execute o script de segurança:
 ```bash
-systemctl restart mariadb
 mysql_secure_installation
 ```
 Responda a todas as perguntas com "SIM" (S) e guarde a senha root do MySQL.<br><br>
 
-Instale o bench no sudo e nomeie a instância como 'frappe-bench' (ex.: /opt/bench/frappe-bench) para indicar que pertence ao usuário/ambiente frappe.
-```bash
-bench init nome-bench 
-```
 ---
 
 ## Passo 7 — Instalar Bench e ERPNext
@@ -126,8 +238,8 @@ Salve o arquivo e, em seguida, ative a variável de ambiente com o seguinte coma
 Crie o diretório do bench e ajuste permissões:
 ```bash
 # como root (ou usando sudo antes)
-mkdir -p /opt/bench
-chown -R frappe:frappe /opt/bench
+sudo mkdir -p /opt/bench
+sudo chown -R frappe:frappe /opt/bench
 
 cd /opt/bench
 ```
@@ -145,9 +257,10 @@ bench init frappe-bench
 
 Crie um novo site (substitua pelo seu domínio):
 ```bash
-cd /opt/bench/frappe
+cd /opt/bench/frappe-bench/
 bench new-site frappe.seudominio.com
 ```
+Para verificar o dns: https://www.whatsmydns.net/<br><br>
 O comando pedirá a senha do banco, administração e outras configurações. Forneça conforme sua política de segurança.
 
 ---
@@ -165,10 +278,8 @@ vamos instalar o frappe-bench e executar o comando abaixo.
 
 Em seguida, navegue até /opt/bench/frappe e configure o ambiente de produção:
 ```bash
-cd /opt/bench/frappe 
 sudo bench setup production frappe
 ```
-
 ---
 
 ## Passo 9 — Configurando o Postman e instalação do certbot
@@ -181,8 +292,11 @@ Resultado completo do host: Name + "." + Zone → nomedosite.max.com<br><br>
 Para a instalação do certbot que irá ajudar a disponibilizar a porta de certificado:
 
 ```bash
+sudo python3 -m venv /opt/certbot/
 sudo /opt/certbot/bin/pip install certbot certbot-nginx
 sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+```
+```bash
 bench config dns_multitenant on
 sudo -H bench setup lets-encrypt seu_dominio.com
 ```
