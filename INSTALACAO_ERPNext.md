@@ -166,8 +166,6 @@ vamos instalar o frappe-bench e executar o comando abaixo.
 Em seguida, navegue até /opt/bench/frappe e configure o ambiente de produção:
 ```bash
 cd /opt/bench/frappe 
-sudo /opt/frappe/.local/bin/bench setup production frappe NO LUGAR DESSE:
-
 sudo bench setup production frappe
 ```
 
