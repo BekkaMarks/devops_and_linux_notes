@@ -1,6 +1,6 @@
 # 📌 Comandos básicos e suas funcionalidades
 ### new-site
-> O comando new-site irá cria um site dentro do ambiente bench. Cria uma nova basta dentro de `./sites`
+> O comando new-site irá cria um site dentro do ambiente bench. Cria uma nova pasta dentro de `./sites`
 com todas as informações e criando juntamente um novo banco de dados no <strong>SGBD</strong> com todos os módulos e tipos de documento do Frappe instalados.
 
 ```bash
