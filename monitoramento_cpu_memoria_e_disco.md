@@ -1,4 +1,4 @@
-# Monitoramento de CPU, Memória e Espaço em Disco
+# 🖥️📊 Monitoramento de CPU, Memória e Espaço em Disco
 O monitoramento de CPU, memória e espaço em disco é fundamental para assegurar a estabilidade e a eficiência de sistemas Linux. Monitorar esses recursos permite detectar sobrecargas, antecipar possíveis falhas, evitar a indisponibilidade de serviços e preservar o desempenho. Por meio de comandos nativos ou ferramentas especializadas, é possível acompanhar o uso em tempo real, identificar gargalos e tomar medidas preventivas antes que ocorram impactos no ambiente.
 
 Abaixo seguem comandos que auxiliam a visualização de cada etapa dos monitoramentos mencionados nesse guia.
