@@ -35,12 +35,11 @@ mpstat -P ALL
 ### <i>Verificação de Espaço em Disco</i>
 
 ### ➜ <strong>df</strong>
-O comando def (disk free) exibe a quantidade de espaço disponível e utilizado em todas as partições montadas no sistema.
-
+O comando df (disk free) mostra quanto espaço de armazenamento está sendo utilizado e quanto ainda está disponível em cada partição montada no sistema.
 ```bash
 df -h
 ```
-A opção `-h` torna a saída légivel, exibindo os tamanhos em unidades compreensíveis (MB e GB).
+A opção `-h` exibe os valores em formato legível (MB, GB), facilitando a interpretação dos dados.
 
 ### ➜ <strong>du</strong>
 Diferente do comando df, o comando du (disk usage) permite examinar o uso de espaço em diretórios específicos.
@@ -61,23 +60,23 @@ ncdu /
 ### <i>Verificação de Memória RAM</i>
 
 ### ➜ <strong>free</strong>
-Exibe a quantidade de memória física e swap disponível e utilizado no sistema.
+O comando free mostra o total de memória física e swap do sistema, indicando quanto está em uso, livre e reservado para cache e buffers. É uma forma rápida de verificar o estado geral da RAM.
 
 ```bash
 free -h
 ```
-> Memória SWAP é uma área do disco usada como extensão da RAM quando a memória física acaba.
+> - Memória SWAP é uma área do disco usada como extensão da RAM quando a memória física acaba.<br>
+> - Buffers são áreas da memória usadas pelo kernel para guardar temporariamente dados que serão escritos no disco.
 
 ### ➜ <strong>vmstat</strong>
-O comando vmstat (Virtual Memory Statistics) fornece uma visão mais detalhada do uso da memória, juntamente com informações sobre processos, CPU, swap, I/O, e mais.
-
+O vmstat (Virtual Memory Statistics) exibe estatísticas em tempo real sobre memória, processos, CPU, swap e operações de I/O. Ele ajuda a identificar como os recursos do sistema estão sendo usados ao longo do tempo.
 ```bash
 vmstat 5
 ```
-Neste exemplo, o vmstat irá atualizar as estatísticas a cada 5 segundos, oferecendo uma visão contínua do estado do sistema.
+No exemplo acima, o comando atualiza as métricas a cada 5 segundos, permitindo acompanhar a evolução do estado do sistema.
 
 ### ➜ <strong>smem</strong>
-Ele exibe a quantidade de memória usada, incluindo a memória compartilhada.
+O smem fornece uma análise mais precisa da memória usada por cada processo, considerando também a porção de memória compartilhada. Ele mostra métricas como USS, PSS e RSS, permitindo identificar com mais clareza o real consumo de RAM pelos processos.
 
 ```bash
 sudo apt-get install smem   # Em distribuições baseadas em Debian/Ubuntu
@@ -97,3 +96,4 @@ https://nerdexpert.com.br/monitoramento-de-cpu-memoria-e-espaco-em-disco-no-linu
 https://diolinux.com.br/tutoriais/o-que-e-memoria-swap.html
 https://www.vivaolinux.com.br/dica/Usando-o-NcDU-(Ncurses-Disk-Usage)
 https://centric.com.br/blog/6-metricas-de-desempenho-do-servidor-linux-a-serem-observadas/?__cf_chl_tk=dAsSSxGxqFwqNEZnTKC7DXVb5UuFevubGJkQ1nMvJfY-1764178867-1.0.1.1-MjhlqETVx_cH4D2ASoX9.iFvaJ7UuHf5PPkQ86ww9Dk
+https://tecnoblog.net/responde/o-que-e-buffer/
