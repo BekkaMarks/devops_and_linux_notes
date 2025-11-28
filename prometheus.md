@@ -1,4 +1,4 @@
-# Introdução ao Prometheus
+# 🔥 Introdução ao Prometheus
 
 Prometheus é uma ferramenta de monitoramento que coleta métricas em tempo real de serviços e sistemas, armazena os dados em um banco de séries temporais e permite criar alertas e dashboards para acompanhar o desempenho da infraestrutura.
 
@@ -38,9 +38,16 @@ Prometheus é uma ferramenta de monitoramento que coleta métricas em tempo real
 >  - (no Prometheus) um conjunto de labels;<br>
 > Exemplo: quantidade de requisições HTTP por segundo — registrada a cada 5 segundos.
 
+### Como o Prometheus Coleta, Armazena e Alerta
 
+1. Ciclo de coleta (Scrape Cycle)<br>
+O Prometheus funciona realizando ciclos periódicos de coleta. A cada intervalo configurado (por exemplo, 15 segundos), ele lê a lista de alvos definida no prometheus.yml, acessa o endpoint /metrics de cada serviço e captura os valores expostos. Esses dados são convertidos em séries temporais e armazenados automaticamente.
 
+2. Armazenamento interno (TSDB)<br>
+O Prometheus salva todas as métricas no seu banco de séries temporais embutido (TSDB). O armazenamento é feito em blocos organizados por intervalos de tempo, combinando memória, arquivos WAL (Write-Ahead Log) e compactação automática para otimizar desempenho e espaço em disco.
 
+3. Sistema de Alertas (Alertmanager)<br>
+O Prometheus avalia constantemente regras de alerta definidas pelos usuários. Quando uma condição é atendida (ex.: uso de CPU acima de 80% por 5 minutos), o Prometheus dispara um alerta para o Alertmanager, que é responsável por agrupar, silenciar e encaminhar notificações para canais como Slack, e-mail, Telegram ou sistemas de incidentes.
 
 
 
