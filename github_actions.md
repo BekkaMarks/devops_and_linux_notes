@@ -17,6 +17,10 @@ Em resumo, o GitHub Actions é amplamente utilizado para:
 
 Isso torna o desenvolvimento mais rápido, confiável e padronizado.
 
+> <strong>Workflow:</strong>
+> É um fluxo automatizado de tarefas que o GitHub Actions executa quando um evento ocorre (como push, commit, merge ou abertura de PR). Cada workflow define quando será executado e o que deve acontecer.<br><br>
+> <strong>Deploy:</strong>
+>Deploy é o processo de colocar uma aplicação em produção, tornando a versão atualizada disponível para os usuários. No GitHub Actions, o deploy geralmente é automatizado para rodar após um merge na branch principal.
 <br><br>
 <h3>Referências Utilizadas na Construção deste Material:</h3>
 https://docs.github.com/pt/actions/get-started/understand-github-actions
