@@ -32,6 +32,20 @@ Quando um programa precisa fazer algo importante (como ler um arquivo, escrever 
 O kernel analisa a solicitação, decide se é permitida e executa a ação necessária.
 Sem isso, nenhum programa poderia interagir com o hardware.
 
+# 🔀 Kernel vs Sistema Operacional
+
+O kernel é apenas uma das partes que compõem um sistema operacional.
+Enquanto ele atua nos bastidores controlando o hardware, o SO engloba toda a estrutura que permite ao usuário interagir com o computador — interface gráfica, serviços, ferramentas, bibliotecas e utilitários essenciais.
+
+Uma forma simples de visualizar:
+
+- Kernel → motor
+
+- Sistema Operacional → carro completo
+
+O kernel garante o funcionamento interno; o SO reúne todos os componentes que tornam o uso possível.
+
+
            Applications
                 ⬍
               Kernel
