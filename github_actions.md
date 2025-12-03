@@ -22,6 +22,13 @@ Isso torna o desenvolvimento mais rápido, confiável e padronizado.
 > <strong>Deploy:</strong>
 >Deploy é o processo de colocar uma aplicação em produção, tornando a versão atualizada disponível para os usuários. No GitHub Actions, o deploy geralmente é automatizado para rodar após um merge na branch principal.
 <br><br>
+> <strong>Pipelines:</strong> São sequências de etapas automatizadas executadas em ordem definida, garantindo que processos — como testes, validações, builds ou deploys — aconteçam de forma padronizada e sem intervenção manual. Em outras palavras, é qualquer cadeia de tarefas automatizadas organizada em etapas.
+<br><br>
+> <strong>Pipelines de CI/CD:</strong> São pipelines específicos usados no desenvolvimento de software para validar, testar, construir e implantar uma aplicação sempre que ocorre uma alteração no código, garantindo integração e entrega contínuas de forma segura e padronizada. <br>
+> - CI (Continuous Integration): rodar testes, validar código, compilar, fazer lint.<br>
+> - CD (Continuous Delivery/Deployment): gerar build, publicar artefatos, realizar o deploy.
+
+<br><br>
 <h3>Referências Utilizadas na Construção deste Material:</h3>
 https://docs.github.com/pt/actions/get-started/understand-github-actions
 https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd
