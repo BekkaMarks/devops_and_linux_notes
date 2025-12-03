@@ -11,9 +11,9 @@ Monitoramento
 - Como funciona: consulta métricas e logs fornecidos por ferramentas especializadas (ex.: Prometheus, InfluxDB, Loki) e exibe tendências, status e gatilhos de alerta para o dia a dia das operações.
 
 Em suma: Grafana serve tanto ao monitoramento (detecção e notificação) quanto à observabilidade (investigação e correlação), sendo extensível e utilizável on‑premises ou na nuvem.
+<br><br>
 
-
-Referências Utilizadas na Construção deste Material:
+<h3>Referências Utilizadas na Construção deste Material:</h3>
 https://github.com/grafana/grafana
 https://www.redhat.com/pt-br/topics/data-services/what-is-grafana
 https://blog.updev.dev.br/posts/grafana-a-plataforma-aberta-para-monitoramento-e-observabilidade
