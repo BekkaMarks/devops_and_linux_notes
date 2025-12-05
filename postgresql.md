@@ -50,26 +50,40 @@ O PostgreSQL conta ainda com diversos tipos de dados avançados, incluindo:
 > - Nós Folha: armazenam as chaves indexadas e ponteiros para as linhas da tabela.
 > - Balanceamento: quando um nó enche, ele se divide; isso mantém a árvore sempre rasa e rápida para buscar.
 > 
-> Hash — Índice baseado em funções de hash, ideal para comparações de igualdade (=).
-> Cria um valor hash para cada chave e acelera buscas onde não importa a ordem dos dados.
-> Mais eficiente que B-tree em consultas que usam igualdade pura, mas não serve para ordenação nem intervalos.
-> 
-> GIN (Generalized Inverted Index) — Índice otimizado para armazenar múltiplos valores por linha, como arrays, JSONB e documentos de texto.
-> Excelente para buscas que envolvem contém, pertence ou existem estas chaves.
-> Muito usado em colunas JSONB com operadores como @>, ? e ?|.
-> 
-> GiST (Generalized Search Tree) — Estrutura flexível que permite indexar dados complexos, como valores geométricos, textos aproximados e tipos personalizados.
-> Não armazena necessariamente em ordem, mas cria uma árvore de regiões que facilita buscas por similaridade, proximidade e interseção.
-> Base de índices como pg_trgm e PostGIS.
-> 
-> BRIN (Block Range Index) — Índice leve que armazena apenas metadados sobre blocos de dados, não valores individuais.
-> Ideal para tabelas enormes onde os dados são naturalmente ordenados, como logs, timestamps e séries temporais.
-> Muito pequeno e rápido de criar, com grande ganho de desempenho em buscas por faixa.
-
-
-
-
-
+> JSON e JSONB (armazenamento flexível em formato documento)
+Permitem guardar dados sem estrutura fixa e consultar campos internos com facilidade. O JSONB, em especial, oferece alto desempenho em buscas e indexação.
+> - Armazenamento sem esquema rígido
+> - Consulta eficiente a campos internos
+> - Indexação avançada (GIN)
+> - Ótimo para integrações e APIs
+>
+> Arrays (listas diretamente no banco)
+> Possibilitam armazenar múltiplos valores em uma única coluna, com suporte nativo a buscas e operadores.
+> - Múltiplos valores no mesmo campo
+> - Operadores poderosos (@>, <@, &&)
+> - Boa performance com indexação GIN
+> - Simplificam modelos mais complexos
+>
+> Tipos de Faixa — Range Types (representação de intervalos)
+> Usados para datas, números e outros valores contínuos, permitindo detectar sobreposição, inclusão e lacunas.
+> - Representam intervalos (ex.: daterange, int4range)
+> - Detectam conflitos automaticamente
+> - Consultas rápidas com índices GiST/Sp-GiST
+> - Ideais para reservas, períodos e escalas
+>
+> UUID (identificador único universal)
+> Tipo nativo para chaves únicas distribuídas, sem riscos de colisão e sem depender de sequência incremental.
+> - Exclusivo e globalmente único
+> - Reduz problemas em sistemas distribuídos
+> - Ótimo para evitar incrementos previsíveis
+> - Suporte nativo a geração (gen_random_uuid())
+>
+> Tipos Geométricos (modelagem espacial básica)
+> Permitem armazenar pontos, linhas, polígonos e áreas diretamente no banco.
+> - Representação nativa de formas geométricas
+> - Operadores para distância, área e interseção
+> - Índices GiST para performance
+> - Úteis em mapas, coordenadas e rotas
 
 <br><br>
 
