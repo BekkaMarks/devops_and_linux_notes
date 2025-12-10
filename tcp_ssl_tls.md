@@ -1,4 +1,4 @@
-# 🔐 Segurança e Conexões em Rede
+# 🔗 Segurança e Conexões em Rede
 
 Na internet, proteger os dados em trânsito é essencial para evitar interceptações, vazamentos e ataques. Protocolos como TCP, SSL e TLS são responsáveis por criar conexões confiáveis e seguras entre clientes e servidores, garantindo que informações sensíveis, como senhas e dados pessoais, sejam transmitidas corretamente e de forma protegida. <br>
 Este documento apresenta de forma clara a diferença entre TCP, SSL e TLS, destacando seu papel na comunicação e na segurança das aplicações web.
