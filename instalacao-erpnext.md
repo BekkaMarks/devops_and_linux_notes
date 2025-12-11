@@ -260,7 +260,6 @@ cd /opt/bench/frappe-bench/
 bench new-site frappe.seudominio.com
 ```
 Para verificar o dns: https://www.whatsmydns.net/<br><br>
-O comando pedirá a senha do banco, administração e outras configurações. Forneça conforme sua política de segurança.
 
 ---
 
