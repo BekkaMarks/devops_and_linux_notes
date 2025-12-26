@@ -41,8 +41,9 @@ Lembre-se de adicionar uma senha utilizando passwd.
 ## Passo 4 — Instalar dependências
 Instale dependências necessária
 ```bash
-apt install -y python3-pip python3-dev python3.10-venv python3-testresources \
-libffi-dev libssl-dev wkhtmltopdf gcc g++ make redis-server
+sudo apt update
+sudo apt install git python-is-python3 python3-dev python3-pip redis-server libmariadb-dev mariadb-server mariadb-client pkg-config
+mariadb-secure-installation
 ```
 Verifique na documentação oficial do Frappe se as dependências e versões estão corretas para a versão que você vai instalar: https://docs.frappe.io/framework/user/en/installation<br>
 
