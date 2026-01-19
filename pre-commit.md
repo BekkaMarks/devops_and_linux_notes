@@ -25,3 +25,4 @@ Para entender melhor o pre-commit, é importante conhecer os conceitos relaciona
 
 - 📖 [Documentação Oficial](https://pre-commit.com/#installation)
 - 📝 [Tutorial Prático](https://medium.com/@habbema/pre-commit-315db54ef2d8)
+- 🎥 [Vídeo Prático](https://www.youtube.com/watch?v=ObksvAZyWdo).
