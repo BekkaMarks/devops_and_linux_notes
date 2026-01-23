@@ -115,7 +115,7 @@ bench --site {nome_site} console
 ```
 
 <br><br>
-<h3>Referências Utilizadas na Construção deste Material:</h3>
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 https://docs.frappe.io/framework/v14/user/en/bench/reference/new-site
 https://docs.frappe.io/framework/user/en/bench
 https://docs.frappe.io/framework/user/en/bench/frappe-commands
