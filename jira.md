@@ -41,7 +41,7 @@ Permitem visualizar métricas importantes do projeto e indicadores-chave de dese
 </p>
 
 <br><br>
-<h3>Referências Utilizadas na Construção deste Material:</h3>
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 <p>
 https://www.atlassian.com/br/software/jira/service-management/product-guide/overview#jira-service-management<br>
 https://visuresolutions.com/pt/guia-jira/o-que-%C3%A9-jira/
