@@ -54,3 +54,9 @@ sudo apt install -y pgloader
 # Acessa o PostgreSQL para validações iniciais
 sudo -u postgres psql
 ```
+
+## 📚 Referências utilizadas
+- 📖 [Documentação Oficial](https://pgloader.readthedocs.io/en/latest/)
+- 📝 [Tutorial Oficial](https://pgloader.readthedocs.io/en/latest/tutorial/tutorial.html#pgloader-quick-start)
+- 📖 [Migração Mariadb -> PostgreSQL](https://dedu.nu/2020/03/05/pgloader-migrating-a-table-from-mysql-mariadb-to-postgresql/)
+- 🎥 [Vídeo Prático](https://www.youtube.com/watch?v=INjlZ6ITOYw  ). 
