@@ -91,7 +91,7 @@ uptime
 ```
 
 <br><br>
-<h3>Referências Utilizadas na Construção deste Material:</h3>
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 https://nerdexpert.com.br/monitoramento-de-cpu-memoria-e-espaco-em-disco-no-linux-comandos-essenciais/
 https://diolinux.com.br/tutoriais/o-que-e-memoria-swap.html
 https://www.vivaolinux.com.br/dica/Usando-o-NcDU-(Ncurses-Disk-Usage)
