@@ -87,7 +87,7 @@ Permitem guardar dados sem estrutura fixa e consultar campos internos com facili
 
 <br><br>
 
-<h3>Referências Utilizadas na Construção deste Material:</h3> 
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3> 
 https://cloud.google.com/discover/what-is-postgresql <br> 
 https://www.ibm.com/think/topics/postgresql <br> 
 https://aws.amazon.com/pt/compare/the-difference-between-mysql-vs-postgresql/ <br> 
