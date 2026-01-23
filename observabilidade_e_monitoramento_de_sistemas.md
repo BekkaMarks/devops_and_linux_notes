@@ -48,7 +48,7 @@ Juntos, formam a base para operação eficiente e confiável de sistemas moderno
 
 
 <br><br>
-<h3>Referências Utilizadas na Construção deste Material:</h3>
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 https://www.redhat.com/pt-br/topics/devops/what-is-observability
 https://www.locaweb.com.br/blog/temas/codigo-aberto/o-que-e-observabilidade-e-monitoramento/
 https://www.opservices.com.br/telemetria/
