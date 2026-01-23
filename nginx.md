@@ -38,5 +38,5 @@ O proxy reverso atua na frente dos servidores, recebendo as requisições antes 
 O NGINX é muito usado como proxy reverso exatamente por ser leve, rápido e eficiente no gerenciamento de múltiplas conexões.
 
 <br><br>
-<h3>Referências Utilizadas na Construção deste Material:</h3>
+<h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 https://www.youtube.com/watch?v=gd_cUmwzgEM&t=2925s
