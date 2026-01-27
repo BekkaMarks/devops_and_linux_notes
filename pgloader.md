@@ -23,10 +23,10 @@ Esse modelo facilita migrações contínuas e reduz intervenções manuais.
 - Execução de comandos SQL antes e após o processo de carga
   
 ```Text
-                                      ┌─────────────────────────┐
-                                      │     Origem dos dados    │
-                                      │    MySQL / CSV / HTTP   │
-                                      └───────────┬─────────────┘
+                                    ┌───────────────────────────┐
+                                    │      Origem dos dados     │
+                                    │     MySQL / CSV / HTTP    │
+                                    └─────────────┬─────────────┘
                                                   |  Leitura contínua
                                                   ▼
                                   ┌────────────────────────────────┐
@@ -38,11 +38,11 @@ Esse modelo facilita migrações contínuas e reduz intervenções manuais.
                                   └───────────────┬────────────────┘
                                                   |  COPY (streaming)
                                                   ▼
-                                    ┌─────────────────────────┐
-                                    │       PostgreSQL        │
-                                    │       - Tabelas         |
-                                    │       - Schemas         |
-                                    └─────────────────────────┘
+                                    ┌──────────────────────────┐
+                                    │        PostgreSQL        │
+                                    │        - Tabelas         |
+                                    │        - Schemas         |
+                                    └──────────────────────────┘
 ```
 ## Instalação
 
