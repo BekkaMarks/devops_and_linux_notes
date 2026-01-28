@@ -1,10 +1,10 @@
 # Entendendo Git
 
-O Git é um sistema de controle de versão distribuído (DVCS). Ele permite acompanhar o histórico de mudanças, recuperar versões anteriores, coordenar o trabalho entre várias pessoas e manter o fluxo de desenvolvimento organizado, tudo isso de forma eficiente e confiável.
+O Git é um sistema de controle de versão distribuída (DVCS). Ele permite acompanhar o histórico de mudanças, recuperar versões anteriores, coordenar o trabalho entre várias pessoas e manter o fluxo de desenvolvimento organizado, tudo de forma eficiente e confiável.
 
 ## Configurações básicas do Git
 
-Essas configurações são salvas localmente e reutilizadas em cada commit:
+Essas configurações ficam registradas localmente e são utilizadas em cada commit.
 
 ```bash
 git config --global user.name "Seu Nome"
@@ -24,8 +24,8 @@ O Git aplica as configurações na seguinte ordem de prioridade (da mais alta pa
 - `--global`: do usuário
 - `--system`: do sistema
 
-⚠️ Caso exista um `user.name` definido no escopo local, ele terá prioridade sobre o valor no escopo global. Assim, cada repositório pode sobrescrever as configurações globais, se necessário.
-
+⚠️ Caso exista um `user.name` definido no escopo local, ele terá prioridade sobre o valor no escopo global.
+Essa posição permite que cada repositório sobrescreva as configurações globais, se necessário.
 ## Iniciando um repositório
 
 Um repositório Git armazena todo o histórico e metadados do seu projeto.
@@ -40,31 +40,30 @@ git init
 
 - `mkdir`: cria um diretório (make directory).
 - `cd`: acessa o diretório (change directory).
-- `git init`: cria um repositório Git no diretório atual, gerando uma pasta oculta chamada `.git`.
+- `git init`: inicializa um repositório Git no diretório atual. Este comando cria uma pasta oculta chamada`.git`, onde ficam todos os dados de controle de versão.
 
 ### 2. Clonar um repositório existente
 
-Quando já existe um repositório remoto criado por você ou outra pessoa, você pode copiá-lo localmente:
+Quando já existe um repositório remoto, criado por você ou por outra pessoa, é possível cloná-lo para sua máquina, copiando todo o código e histórico.
 
+Esse comando baixa todo o projeto, incluindo o histórico de commits e as ramificações (branches).
 ```bash
 git clone https://exemplo.com/repositorio.git
 ```
 
-Este comando faz o download do projeto inteiro, incluindo histórico de commits e branches.
-
 ## Ciclo de vida no Git (Git Lifecycle)
 
-O ciclo de vida define os diferentes estágios pelos quais um arquivo passa em um projeto Git:
+O ciclo de vida no Git define os diferentes estágios pelos quais um arquivo passa em um projeto versionado:
 
 ```text
 ┌────────────────┐  ┌───────────────────────────┐  ┌────────────┐  ┌────────────────────────────┐
-│  Rastreamento  │  │    Preparação (staging)   │  │   Commit   │  │ Envio de alterações (push) │
+│  Rastreamento  │——│    Preparação (staging)   │——│   Commit   │——│ Envio de alterações (push) │
 └────────────────┘  └───────────────────────────┘  └────────────┘  └────────────────────────────┘
 ```
 
-Esses estágios garantem que as alterações sejam processadas de forma sistemática, reduzindo erros e melhorando a colaboração.
+Esse ciclo de vida garante que as alterações sejam tratadas de forma sistemática, reduzindo erros e facilitando a colaboração.
 
-#### Principais estágios do ciclo de vida do Git:
+#### Os quatro estágios principais no ciclo de vida do Git são:
 
 1. Diretório de trabalho (Working Directory)
 2. Área de preparação (Staging Area)
