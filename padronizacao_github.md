@@ -65,10 +65,10 @@ Esse ciclo de vida garante que as alterações sejam tratadas de forma sistemát
 
 #### Os quatro estágios principais no ciclo de vida do Git são:
 
-1. Diretório de trabalho (Working Directory)
-2. Área de preparação (Staging Area)
-3. Repositório local (Local Repository)
-4. Repositório remoto (Remote Repository)
+1. Diretório de trabalho (Working Directory): Onde os arquivos são criados e modificados, mas ainda não foram monitorados ou reconhecidos pelo Git.
+2. Área de preparação (Staging Area): Espaço temporário onde as alterações são adicionadas antes dos commits.
+3. Repositório local (Local Repository): Onde é armazenado todas as mudanças e commits.
+4. Repositório remoto (Remote Repository): Repositório compartilhado que está hospedado em uma plataforma (Github, GitLab e BitBucket) onde são realizados os comandos push e pull entre os colaboradores do repositório.
 
 ### Principais comandos do ciclo de vida:
 
