@@ -54,9 +54,28 @@ sudo apt install -y pgloader
 # Acessa o PostgreSQL para validações iniciais
 sudo -u postgres psql
 ```
+## COPY do PostgreSQL
+O comando COPY move dados entre tabelas e uma fonte/destino, que pode ser:
+- um arquivo no servidor
+- ou um fluxo (STDIN / STDOUT)
+
+> STDIN: Standard Input (Entrada Padrão)<br>
+> STDOUT: Standard Output (Saída Padrão)
+
+```bash
+┌─────────────────────┐   COPY TO     ┌───────────┐
+|  Tabela PostgreSQL  |—————————————▶ |  Arquivo  |
+└─────────────────────┘               └───────────┘
+┌─────────────────────┐   COPY FROM   ┌───────────┐
+|  Tabela PostgreSQL  | ◀—————————————|  Arquivo  |
+└─────────────────────┘               └───────────┘
+```
+- `COPY TO`: Exporta os dados de uma tabela (ou resultado de uma consulta) para um arquivo.
+- `COPY FROM`: Importa dados de um arquivo para dentro de uma tabela, acrescentando-os aos registros já existentes.
 
 ## 📚 Referências utilizadas
 - 📖 [Documentação Oficial](https://pgloader.readthedocs.io/en/latest/)
+- 📖 [Documentação Oficial COPY](https://www.postgresql.org/docs/9.2/sql-copy.html)
 - 📝 [Tutorial Oficial](https://pgloader.readthedocs.io/en/latest/tutorial/tutorial.html#pgloader-quick-start)
 - 📖 [Migração Mariadb -> PostgreSQL](https://dedu.nu/2020/03/05/pgloader-migrating-a-table-from-mysql-mariadb-to-postgresql/)
 - 🎥 [Vídeo Prático](https://www.youtube.com/watch?v=INjlZ6ITOYw  ). 
