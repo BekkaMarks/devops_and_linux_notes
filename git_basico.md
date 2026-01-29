@@ -92,6 +92,45 @@ git push                   # Envia os commits ao repositório remoto
 
 ---
 
+## Boas Práticas
+
+- **Mensagens de commit claras e descritivas:**  
+  Explique o que foi feito e, se relevante, por quê. Uma boa mensagem ajuda a entender o histórico do projeto sem consultar cada modificação individualmente.
+  > Exemplo:  
+  > - `feat`: nova funcionalidade (feature)
+  > - `fix`: correção de bug
+  > - `docs`: mudanças na documentação
+  > - `style`: mudanças de formatação, espaços, ponto e vírgula, etc. (sem alteração de código)
+  > - `refactor`: refatoração de código (nem bug, nem nova feature)
+  > - `perf`: melhoria de performance
+  > - `test`: adição ou ajuste de testes
+  > - `chore`: tarefas de manutenção, build e outras que não afetam o código de produção
+  > - `build`: mudanças que afetam o sistema de build ou dependências externas  
+  > - `ci`: mudanças em arquivos e scripts de integração contínua
+  > - `revert`: reverte um commit anterior
+
+- **Commits menores e frequentes:**  
+  Realizar pequenas alterações com maior frequência facilita o rastreamento de mudanças e a identificação de possíveis problemas. Commits grandes e genéricos dificultam o entendimento e, em caso de erro, dificultam o rollback.
+
+- **Branch por feature:**  
+  Utilize uma branch separada para cada funcionalidade, correção de bug ou melhoria. Isso organiza o fluxo de trabalho, facilita a colaboração e mantém a `main/master` sempre estável.
+  > Exemplo de nomes:  
+  > `feature/login-page`, `bugfix/cadastro-usuario`, `hotfix/ajuste-footer`
+
+- **Padronize commits e nomes de branches:**  
+  Defina um padrão de nomenclatura para commits (como [Conventional Commits](https://www.conventionalcommits.org/)) e nomes de branches (por exemplo: `feature/`, `bugfix/`, `hotfix/`). Isso facilita buscas, automatizações e a leitura do histórico.
+
+- **Atualize sua branch frequentemente:**  
+  Use `git pull` ou `git fetch` para manter sua branch atualizada com a principal, evitando conflitos grandes no momento do merge.
+
+- **Código revisado por pares:**  
+  Antes de integrar alterações, faça pull requests ou merge requests para que outros possam revisar e sugerir melhorias.
+
+- **Evite arquivos desnecessários:**  
+  Sempre configure um arquivo `.gitignore` adequado ao seu projeto para evitar versionar arquivos temporários, de build, senhas e outras informações sensíveis.
+
+  
+
 ### Referências Utilizadas
 
 - https://git-scm.com/install/linux
