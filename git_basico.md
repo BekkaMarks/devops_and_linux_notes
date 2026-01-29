@@ -99,3 +99,4 @@ git push                   # Envia os commits ao repositório remoto
 - https://git-scm.com/docs/git-config
 - https://stackoverflow.com/questions/60202175/what-is-the-difference-between-global-and-local-configuration-in-git
 - https://www.w3schools.in/git/lifecycle
+- https://www.conventionalcommits.org/en/v1.0.0/#specification
