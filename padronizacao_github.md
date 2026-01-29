@@ -65,11 +65,23 @@ Esse ciclo de vida garante que as alterações sejam tratadas de forma sistemát
 
 #### Os quatro estágios principais no ciclo de vida do Git são:
 
-1. Diretório de trabalho (Working Directory): Onde os arquivos são criados e modificados, mas ainda não foram monitorados ou reconhecidos pelo Git.
-2. Área de preparação (Staging Area): Espaço temporário onde as alterações são adicionadas antes dos commits.
-3. Repositório local (Local Repository): Onde é armazenado todas as mudanças e commits.
-4. Repositório remoto (Remote Repository): Repositório compartilhado que está hospedado em uma plataforma (Github, GitLab e BitBucket) onde são realizados os comandos push e pull entre os colaboradores do repositório.
-
+1. <strong>Diretório de trabalho (Working Directory):</strong> Onde os arquivos são criados e modificados, mas ainda não foram monitorados ou reconhecidos pelo Git.
+Comandos usados nesta etapa: 
+      - `git status`: Verifica quais arquivos foram modificados ou ainda não estão sendo rastreados.
+      - `git diff`: Visualizar alterações feitas no diretório de trabalho.
+2. <strong>Área de preparação (Staging Area):</strong> Espaço temporário onde as alterações são adicionadas antes dos commits.
+Comandos usados nesta etapa: 
+      - git add filename→ Preparar um arquivo específico.
+      - git add .→ Preparar todos os arquivos modificados.
+      - git reset filename→ Remover um arquivo da área de preparação (movê-lo de volta para o diretório de trabalho).
+3. <strong>Repositório local (Local Repository):</strong> Onde é armazenado todas as mudanças e commits.
+      - git commit -m "Commit message"→ Salvar as alterações preparadas no repositório local.
+      - git log→ Ver histórico de commits.
+4. <strong>Repositório remoto (Remote Repository):</strong> Repositório compartilhado que está hospedado em uma plataforma (Github, GitLab e BitBucket) onde são realizados os comandos push e pull entre os colaboradores do repositório.
+      - git push origin branch-name→ Enviar commits locais para o repositório remoto.
+      - git pull origin branch-name→ Obter e mesclar alterações do repositório remoto.
+      - git clone repository-url→ Copie um repositório remoto para o seu sistema local.
+    
 ### Principais comandos do ciclo de vida:
 
 ```bash
