@@ -49,8 +49,8 @@ O kernel garante o funcionamento interno; o SO reúne todos os componentes que t
            Applications
                 ⬍
               Kernel
-      ⬍        ⬍        ⬍
-     CPU     Memory   Devices
+       ⬍        ⬍        ⬍
+      CPU     Memory   Devices
      
 <br><br>
 <h3>📚 Referências Utilizadas na Construção deste Material:</h3>
