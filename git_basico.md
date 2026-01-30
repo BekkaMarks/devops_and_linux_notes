@@ -129,8 +129,6 @@ git push                   # Envia os commits ao repositório remoto
 - **Evite arquivos desnecessários:**  
   Sempre configure um arquivo `.gitignore` adequado ao seu projeto para evitar versionar arquivos temporários, de build, senhas e outras informações sensíveis.
 
-  
-
 ### Referências Utilizadas
 
 - https://git-scm.com/install/linux
