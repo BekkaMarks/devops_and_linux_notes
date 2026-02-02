@@ -56,4 +56,4 @@ O kernel garante o funcionamento interno; o SO reúne todos os componentes que t
 <h3>📚 Referências Utilizadas na Construção deste Material:</h3>
 https://www.corsair.com/pt/pt/explorer/glossary/what-is-a-kernel/#:~:text=O%20kernel%20%C3%A9%20o%20n%C3%BAcleo%20de%20um,que%20mant%C3%A9m%20tudo%20a%20funcionar%20sem%20colis%C3%B5es. <br>
 https://www.certificacaolinux.com.br/como-funciona-o-kernel-do-linux/ <br>
-https://www.redhat.com/pt-br/topics/linux/what-is-the-linux-kernel
+https://www.redhat.com/pt-br/topics/linux/what-is-the-linux-kernel.
