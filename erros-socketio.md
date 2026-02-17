@@ -31,3 +31,21 @@ Regere as configurações de produção:
 sudo bench setup production frappe
 ```
 Após a alteração, teste novamente e verifique se o status do "SocketIO Ping Check" mudou para Pass.
+
+## Realtime (SocketIO) no Frappe 16
+1. Verificar os serviços registrados no Supervisor:
+    ```bash
+   sudo supervisorctl status
+   ``` 
+2. Regerar os arquivos de configuração do Supervisor a partir do Bench:
+   ```bash
+   bench setup supervisor
+   ```
+3. Aplicar as alterações no Supervisor:
+   ```bash
+   sudo supervisorctl update
+   ```
+4. Confirmar se o serviço node-socketio foi criado e está em execução:
+   ```bash
+   sudo supervisorctl status
+   ```
