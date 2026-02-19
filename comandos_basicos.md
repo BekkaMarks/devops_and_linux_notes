@@ -108,7 +108,7 @@ bench --site {nome_site} mariadb
 > Abre um console interativo do Python com o ambiente Frappe carregado, permitindo executar código diretamente no contexto do site.
 > - Carrega o Frappe e seus módulos.
 > - Permite acessar DocTypes, banco de dados, funções internas e objetos do sistema via Python.
-> - Útil para depuração, testes rápidos e execução de comandos administrativos.
+> - Útil para depuração, testes rápidos e execução de comandos administrativos edit edit edit.
 
 ```bash
 bench --site {nome_site} console
