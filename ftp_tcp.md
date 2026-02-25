@@ -108,7 +108,7 @@ Após criar o usuário, é recomendável criar um diretório dedicado para armaz
 ```bash
 sudo mkdir /home/usuario_acesso/ftp
 ```
-**8.Ajustando Permissões para ambiente seguro (Chroot)** <br>
+**8.Ajustando Permissões para ambiente seguro (Chroot)** <br><br>
 ***Criar diretório para upload***
 ```bash
 sudo mkdir /home/usuario_acesso/ftp/files
