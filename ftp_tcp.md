@@ -238,7 +238,11 @@ Verifique se o serviço está ativo:
 ```bash
 sudo systemctl status vsftpd
 ```
-
+### Opcional <br>
+Se for necessário acessar o FTP de outra máquina na mesma rede, utilize o comando:
+```bash
+ftp IP_maquina
+```
 ## 📚 Referências
 - 📘 [Entendendo logs FTP](https://blog.ironlinux.com.br/entendendo-logs-ftp/)
 - 💻 [Comando Linux FTP](https://sempreupdate.com.br/comando-linux-ftp-domine-a-transferencia-de-arquivos-pelo-terminal/)
