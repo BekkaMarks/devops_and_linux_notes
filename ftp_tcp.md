@@ -64,3 +64,10 @@ O modelo TCP/IP costuma ser organizado em camadas, por exemplo:
 - **TCP**: garante comunicação confiável, com controle de erros, ordenação e confirmação de entrega.
 - **IP**: define o endereçamento e o roteamento dos pacotes na rede.
 ---
+
+## 📚 Referências
+- 📘 [Entendendo logs FTP](https://blog.ironlinux.com.br/entendendo-logs-ftp/)
+- 💻 [Comando Linux FTP](https://sempreupdate.com.br/comando-linux-ftp-domine-a-transferencia-de-arquivos-pelo-terminal/)
+- 🌐 [O que é FTP e como funciona](https://www.hostinger.com/br/tutoriais/ftp-o-que-e-como-funciona)
+- 📝 [Tutorial Prático: Criar servidor FTP no Linux](https://pplware.sapo.pt/linux/criar-um-servidor-ftp-no-linux-5-minutos/)
+- 📡 [O que é TCP/IP](https://tecnoblog.net/responde/o-que-e-tcp-ip/)
