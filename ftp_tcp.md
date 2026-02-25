@@ -61,6 +61,6 @@ O modelo TCP/IP costuma ser organizado em camadas, por exemplo:
 
 ### Função de cada protocolo
 
-**TCP**: garante comunicação confiável, com controle de erros, ordenação e confirmação de entrega.
-**IP**: define o endereçamento e o roteamento dos pacotes na rede.
+- **TCP**: garante comunicação confiável, com controle de erros, ordenação e confirmação de entrega.
+- **IP**: define o endereçamento e o roteamento dos pacotes na rede.
 ---
