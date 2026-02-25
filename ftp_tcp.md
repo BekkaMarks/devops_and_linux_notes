@@ -70,20 +70,20 @@ Antes de iniciar a configuração do FTP, é necessário instalar o serviço res
 
 O pacote a ser utlizado será o **VSFTPD (Very Secure FTP Daemon)**.
 
-1. Atualizar repositórios
+**1. Atualizar repositórios** 
 ```bash
 sudo apt-get update
 ```
-2. Instalando VSFTPD
+**2. Instalando VSFTPD** 
 ```bash
 sudo apt-get install vsftpd
 ```
-3. Backup do arquivo de configuração
+**3. Backup do arquivo de configuração**<br>
 Antes de realizar qualquer alteração, é uma boa prática criar uma cópia de segurança do arquivo original:
 ```bash
 sudo cp /etc/vsftpd.conf /etc/vsftpd.conf.orig
 ```
-4. Liberar portas no firewall
+**4. Liberar portas no firewall** <br>
 O FTP utiliza as seguintes portas padrão:
 - 20/TCP → Transferência de dados
 - 21/TCP → Controle da conexão <br>
@@ -94,21 +94,21 @@ sudo ufw allow 21/tcp
 ```
 ⚠️ Observação: Se o servidor estiver atrás de roteador ou firewall externo, pode ser necessário liberar as portas também no equipamento de rede.
 
-5. Verificar o usuário FTP do sistema.
+**5. Verificar o usuário FTP do sistema**
 ```bash
 cat /etc/passwd | grep ftp
 ```
-6. Criando Usuáros para acesso FTP
+**6. Criando Usuáros para acesso FTP** <br>
 Para permitir acesso ao servidor FTP de forma controlada, recomenda-se criar um usuário específico para esse fim.
 ```bash
 sudo adduser usuario_acesso
 ```
-7. Criando Diretório para armazenamento FTP
+**7. Criando Diretório para armazenamento FTP** <br>
 Após criar o usuário, é recomendável criar um diretório dedicado para armazenar os arquivos que serão acessados via FTP:
 ```bash
 sudo mkdir /home/usuario_acesso/ftp
 ```
-8.Ajustando Permissões para ambiente seguro (Chroot)
+**8.Ajustando Permissões para ambiente seguro (Chroot)** <br>
 ***Criar diretório para upload***
 ```bash
 sudo mkdir /home/usuario_acesso/ftp/files
@@ -131,37 +131,37 @@ O VSFTPD exige que a raiz do chroot não seja gravável.
 ```bash
 sudo ls -la /home/usuario_acesso/ftp
 ```
-9. Ajustar Permissões da pasta de Upload
+**9. Ajustar Permissões da pasta de Upload** <br>
 Após configurar o diretório raiz do FTP para não ser gravável (exigência do chroot do vsftpd), é necessário garantir que o usuário tenha permissão de escrita na subpasta destinada aos uploads.
 
 ```bash
 sudo chown usuario_acesso:usuario_acesso /home/usuario_acesso/ftp/files
 ```
 
-10. Criar Arquivo teste
+**10. Criar Arquivo teste** <br>
 Para validar se as permissões estão corretas, podemos criar um arquivo de teste:
 ```
 echo "vsftpd test file" | sudo tee /home/usuario_acesso/ftp/files/test.txt
 ```
 
-11. Removendo o arquivo de configuração padrão
+**11. Removendo o arquivo de configuração padrão** <br>
 Como foi realizado backup anteriormente, podemos remover o arquivo original para criar uma nova configuração do zero:
 ```bash
 sudo rm /etc/vsftpd.conf
 ```
 ⚠️ Atenção: Só execute esse comando se o backup já tiver sido criado.
 
-12. Verificando ou Escolhendo o Editor de Texto
+**12. Verificando ou Escolhendo o Editor de Texto** <br>
 Antes de criar o novo arquivo de configuração do vsftpd, é recomendável verificar qual editor de texto está configurado como padrão no sistema.
 ```bash
 sudo update-alternatives --display editor
 ```
-***(Opcional) Alterar Editor Padrão***
+***(Opcional) Alterar Editor Padrão*** <br>
 Caso deseje escolher outro editor instalado:
 ```bash
 sudo update-alternatives --config editor
 ```
-***(Opcional) Instalar Outro Editor***
+***(Opcional) Instalar Outro Editor*** <br>
 Se o editor desejado não estiver instalado, você pode instalá-lo manualmente.
 Instalar o Nano
 ```bash
@@ -176,7 +176,8 @@ Após instalar, execute novamente para defini-lo como padrão:
 ```bash
 sudo update-alternatives --config editor
 ```
-13. Criar Novo Arquivo de Configuração do VSFTPD
+
+**13. Criar Novo Arquivo de Configuração do VSFTPD** <br>
 Agora crie o novo arquivo utilizando o editor de sua preferência.<br>
 Com o comando nano:
 ```bash
@@ -207,14 +208,15 @@ ssl_enable=NO
 force_dot_files=YES
 allow_writeable_chroot=YES
 ```
-14. Adicionar Usuário à Lista de Permitidos
+
+**14. Adicionar Usuário à Lista de Permitidos** <br>
 Agora adicione o usuário criado anteriormente (usuario_acesso) à lista de usuários permitidos:
 ```bash
 echo "usuario_acesso" | sudo tee -a /etc/vsftpd.userlist
 ```
 Se o arquivo /etc/vsftpd.userlist não existir, ele será criado automaticamente.
 
-15. Reiniciar o Serviço FTP
+**15. Reiniciar o Serviço FTP** <br>
 Para aplicar as configurações:
 ```bash
 sudo systemctl restart vsftpd
