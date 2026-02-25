@@ -189,6 +189,7 @@ sudo vi /etc/vsftpd.conf
 ```
 ***Inserir o Conteúdo no Arquivo***
 ```bash
+  GNU nano 7.2                                       /etc/vsftpd.conf                                                 
 listen=NO
 listen_ipv6=YES
 anonymous_enable=NO
@@ -207,7 +208,19 @@ rsa_private_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
 ssl_enable=NO
 force_dot_files=YES
 allow_writeable_chroot=YES
+
+# Configuração para conexões externas
+pasv_enable=YES
+pasv_min_port=40000
+pasv_max_port=40100
+pasv_address= ***IP_maquina***
+
 ```
+Para encontrar o ip da máquina rode em: 
+```bash
+ip a
+```
+Você irá localizá-lo em: ...scope global dynamic noprefixroute wlp2s0
 
 **14. Adicionar Usuário à Lista de Permitidos** <br>
 Agora adicione o usuário criado anteriormente (usuario_acesso) à lista de usuários permitidos:
