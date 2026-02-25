@@ -247,5 +247,6 @@ ftp IP_maquina
 - 📘 [Entendendo logs FTP](https://blog.ironlinux.com.br/entendendo-logs-ftp/)
 - 💻 [Comando Linux FTP](https://sempreupdate.com.br/comando-linux-ftp-domine-a-transferencia-de-arquivos-pelo-terminal/)
 - 🌐 [O que é FTP e como funciona](https://www.hostinger.com/br/tutoriais/ftp-o-que-e-como-funciona)
--  [Tutorial Prático: Criar servidor FTP no Linux com VSFTP](https://www.vivaolinux.com.br/dica/VSFTP-no-Ubuntu-Instalacao-e-Configuracao/)
+- 📝 [Tutorial Prático: Criar servidor FTP no Linux com VSFTP](https://www.vivaolinux.com.br/dica/VSFTP-no-Ubuntu-Instalacao-e-Configuracao/)
 - 📡 [O que é TCP/IP](https://tecnoblog.net/responde/o-que-e-tcp-ip/)
+- 🎥 [Vídeo explicativo sobre FTP](https://www.youtube.com/watch?v=fZy0E-zTgR0)
