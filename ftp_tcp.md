@@ -313,3 +313,4 @@ sudo systemctl restart vsftpd
 - 📝 [Tutorial Prático: Criar servidor FTP no Linux com VSFTP](https://www.vivaolinux.com.br/dica/VSFTP-no-Ubuntu-Instalacao-e-Configuracao/)
 - 📡 [O que é TCP/IP](https://tecnoblog.net/responde/o-que-e-tcp-ip/)
 - 🎥 [Vídeo explicativo sobre FTP](https://www.youtube.com/watch?v=fZy0E-zTgR0)
+- 📝 [Incluindo certificado TLS](/https://www.mmhospedagem.com.br/knowledgebase/738/Configurando-um-servidor-FTP-seguro-com-TLS-no-Ubuntu-22.html)
