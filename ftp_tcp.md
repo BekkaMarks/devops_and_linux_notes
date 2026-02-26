@@ -189,7 +189,6 @@ sudo vi /etc/vsftpd.conf
 ```
 ***Inserir o Conteúdo no Arquivo***
 ```bash
-  GNU nano 7.2                                       /etc/vsftpd.conf                                                 
 listen=NO
 listen_ipv6=YES
 anonymous_enable=NO
@@ -243,6 +242,70 @@ Se for necessário acessar o FTP de outra máquina na mesma rede, utilize o coma
 ```bash
 ftp IP_maquina
 ```
+---
+
+# Configurando VSFTDP com TLS
+Criando o certificado TLS/SSL:
+```bash
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem
+```
+Em seguida, você precisa configurar o vsftpd para usar esse certificado. Edite o arquivo de configuração:
+```bash
+sudo nano /etc/vsftpd.conf
+```
+Atualize as seguintes linhas para garantir que o TLS seja usado:
+```bash
+# Configurações básicas
+listen=NO
+listen_ipv6=YES
+anonymous_enable=NO
+local_enable=YES
+write_enable=YES
+local_umask=022
+dirmessage_enable=YES
+use_localtime=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+chroot_local_user=YES
+pam_service_name=vsftpd
+force_dot_files=YES
+allow_writeable_chroot=YES
+
+# Logs
+xferlog_enable=YES
+xferlog_file=/var/log/vsftpd.log
+log_ftp_protocol=YES
+
+# TLS/SSL Config
+ssl_enable=YES
+allow_anon_ssl=NO
+force_local_data_ssl=YES
+force_local_logins_ssl=YES
+
+ssl_tlsv1=YES
+ssl_sslv2=NO
+ssl_sslv3=NO
+require_ssl_reuse=NO
+ssl_ciphers=HIGH
+
+rsa_cert_file=/etc/ssl/private/vsftpd.pem
+rsa_private_key_file=/etc/ssl/private/vsftpd.pem
+
+# Configuração PASV (passivo)
+pasv_enable=YES
+pasv_min_port=40000
+pasv_max_port=40100
+pasv_address=192.168.101.82  # coloque seu IP público se for para acesso externo
+
+
+# Misc / Segurança
+secure_chroot_dir=/var/run/vsftpd/empty
+```
+Reinicie o serviço do vstfpd para as alterações entrarem em vigor:
+```bash
+sudo systemctl restart vsftpd
+```
+
 ## 📚 Referências
 - 📘 [Entendendo logs FTP](https://blog.ironlinux.com.br/entendendo-logs-ftp/)
 - 💻 [Comando Linux FTP](https://sempreupdate.com.br/comando-linux-ftp-domine-a-transferencia-de-arquivos-pelo-terminal/)
