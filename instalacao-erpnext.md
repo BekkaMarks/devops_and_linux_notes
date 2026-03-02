@@ -42,8 +42,7 @@ Lembre-se de adicionar uma senha utilizando passwd.
 Instale dependências necessária
 ```bash
 sudo apt update
-sudo apt install git python-is-python3 python3-dev python3-pip redis-server libmariadb-dev mariadb-server mariadb-client pkg-config
-mariadb-secure-installation
+sudo apt install git python-is-python3 python3-dev python3-pip redis-server libmariadb-dev pkg-config
 ```
 Verifique na documentação oficial do Frappe se as dependências e versões estão corretas para a versão que você vai instalar: https://docs.frappe.io/framework/user/en/installation<br>
 
