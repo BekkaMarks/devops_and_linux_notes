@@ -200,7 +200,21 @@ innodb_buffer_pool_size = 22G
 ```bash
 cp my-cnf.conf /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
+```bash
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -fsSL https://mariadb.org/mariadb_release_signing_key.pgp \
+  | sudo gpg --dearmor -o /etc/apt/keyrings/mariadb-keyring.gpg
+```
 
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/mariadb-keyring.gpg] \
+https://mirror.mariadb.org/repo/11.8/ubuntu jammy main" \
+| sudo tee /etc/apt/sources.list.d/mariadb.list
+```
+
+```bash
+sudo apt update
+```
 Instale o MariaDB:
 ```bash
 apt install mariadb-server mariadb-client
