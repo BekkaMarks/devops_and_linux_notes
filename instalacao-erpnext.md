@@ -314,6 +314,11 @@ sudo -H bench setup lets-encrypt seu_dominio.com
 ```
 Responda a todas as perguntas com "SIM" (S) exeto a mensagem de pedido de autorização (opt‑in) para usar/compartilhar seu e‑mail.
 
+# Passo 10 - Cors
+Dentro do **common_site_config.json** adicione:
+```bash
+"allow_cors": "*",
+```
 ---
 ## 📚 Referência
 Guia base consultado:
