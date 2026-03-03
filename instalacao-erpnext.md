@@ -319,6 +319,11 @@ Dentro do **common_site_config.json** adicione:
 ```bash
 "allow_cors": "*",
 ```
+Caso seja necessário adicionar mais configurações siga o guia:
+https://github.com/grv-software/max/blob/develop/max/docs/Padr%C3%B5es%20Instala%C3%A7%C3%A3o%20de%20Base/Nginx.md
+<br>
+Para o cors, apenas o segundo location basta.
+
 ---
 ## 📚 Referência
 Guia base consultado:
