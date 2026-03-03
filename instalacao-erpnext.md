@@ -314,15 +314,16 @@ sudo -H bench setup lets-encrypt seu_dominio.com
 ```
 Responda a todas as perguntas com "SIM" (S) exeto a mensagem de pedido de autorização (opt‑in) para usar/compartilhar seu e‑mail.
 
-# Passo 10 - Cors
-Dentro do **common_site_config.json** adicione:
+## Passo 10 — Configuração Cors
+Dentro do arquivo common_site_config.json, adicione o seguinte parâmetro:
 ```bash
 "allow_cors": "*",
 ```
-Caso seja necessário adicionar mais configurações siga o guia:<br>
+Se for necessário aplicar configurações adicionais no Nginx, siga o guia:
+<br>
 https://github.com/grv-software/max/blob/develop/max/docs/Padr%C3%B5es%20Instala%C3%A7%C3%A3o%20de%20Base/Nginx.md
 <br>
-Para o cors, apenas o segundo location basta.
+Para configuração de CORS no Nginx, apenas o **segundo bloco** `location` indicado no guia é suficiente.
 
 ---
 ## 📚 Referência
