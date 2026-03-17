@@ -285,7 +285,7 @@ sudo apt install supervisor nginx -y
 
 vamos instalar o frappe-bench e executar o comando abaixo.
 ```bash
- sudo pip3 install frappe-bench
+sudo pip3 install frappe-bench
 ```
 
 Em seguida, navegue até /opt/bench/frappe e configure o ambiente de produção:
