@@ -33,6 +33,7 @@ Crie um usuário dedicado para a instalação:
 ```bash
 useradd -m -d /opt/frappe -U -r -s /bin/bash frappe
 usermod -aG sudo frappe
+passwd frappe
 ```
 Lembre-se de adicionar uma senha utilizando passwd.
 
