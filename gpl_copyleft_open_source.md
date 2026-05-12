@@ -31,9 +31,5 @@ Em projetos open source, normalmente o código fica em um repositório público 
 
 - **GPL:** Garante que todas as versões modificadas também permaneçam abertas e livres, graças ao copyleft. Se você modificar um software GPL, é obrigado a liberar a nova versão sob a mesma licença.
 - **Outras licenças open source:** Também permitem estudar, modificar e compartilhar, mas podem permitir que softwares derivados sejam distribuídos sob outras licenças, inclusive fechadas.
-
-**Em resumo:**  
-A GPL, por causa do copyleft, protege a liberdade do software ao exigir que qualquer modificação também seja sempre aberta. Já outras licenças de código aberto podem permitir que versões modificadas deixem de ser livres.
-
 ---
 
